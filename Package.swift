@@ -9,12 +9,15 @@ let package = Package(
     dependencies: [
         // 💧 A server-side Swift web framework.
         .package(url: "https://github.com/vapor/vapor.git", from: "4.0.0"),
+        .package(url: "https://github.com/slashmo/swift-otel.git", from: "0.3.0"),
     ],
     targets: [
         .target(
             name: "App",
             dependencies: [
-                .product(name: "Vapor", package: "vapor")
+                .product(name: "Vapor", package: "vapor"),
+                .product(name: "OpenTelemetry", package: "swift-otel"),
+                .product(name: "OtlpGRPCSpanExporting", package: "swift-otel"),
             ],
             swiftSettings: [
                 // Enable better optimizations when building in Release configuration. Despite the use of

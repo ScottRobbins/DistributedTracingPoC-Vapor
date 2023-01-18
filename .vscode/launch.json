@@ -1,0 +1,22 @@
+{
+  "configurations": [
+    {
+      "type": "lldb",
+      "request": "launch",
+      "name": "Debug Run",
+      "program": "${workspaceFolder:distributed-tracing-poc}/.build/debug/Run",
+      "args": [],
+      "cwd": "${workspaceFolder:distributed-tracing-poc}",
+      "preLaunchTask": "swift: Build Debug Run"
+    },
+    {
+      "type": "lldb",
+      "request": "launch",
+      "name": "Release Run",
+      "program": "${workspaceFolder:distributed-tracing-poc}/.build/release/Run",
+      "args": [],
+      "cwd": "${workspaceFolder:distributed-tracing-poc}",
+      "preLaunchTask": "swift: Build Release Run"
+    }
+  ]
+}
